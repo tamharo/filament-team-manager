@@ -1,0 +1,40 @@
+{
+    "name": "manhamprod/filament-team-manager",
+    "description": "Filament Team Manager pour multi-admins & équipes",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Manhamprod\\FilamentTeamManager\\": "src/",
+            "Manhamprod\\FilamentTeamManager\\Tests\\": "tests/"
+        }
+    },
+
+    "authors": [
+        {
+            "name": "Hamza Azdad",
+            "email": "hamza.azdad@icloud.com"
+        }
+    ],
+
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Manhamprod\\FilamentTeamManager\\FilamentTeamManagerServiceProvider"
+            ]
+        }
+    },
+
+    "require": {
+        "php": ">=8.1",
+        "filament/filament": "^3.0",
+        "spatie/laravel-permission": "^6.16",
+        "cviebrock/eloquent-sluggable": "^12.0"
+    },
+
+    "require-dev": {
+        "orchestra/testbench": "^10.1",
+        "livewire/livewire": "^3.6"
+    }
+
+}
