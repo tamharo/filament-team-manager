@@ -15,12 +15,17 @@ use Manhamprod\FilamentTeamManager\Filament\Resources\TeamResource\Pages;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Manhamprod\FilamentTeamManager\Filament\Resources\TeamResource\RelationManagers;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Contracts\Support\Htmlable;
 
 class TeamResource extends Resource
 {
     protected static ?string $model = Team::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    public static function getNavigationIcon(): string | Htmlable | null
+    {
+        return config("filament-team-manager.icons.team");
+    }
+
     protected static ?string $navigationGroup = 'Team';
 
     public static function form(Form $form): Form

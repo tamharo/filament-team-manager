@@ -15,12 +15,18 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Manhamprod\FilamentTeamManager\Filament\Resources\TeamInvitationResource\Pages;
 use Manhamprod\FilamentTeamManager\Filament\Resources\TeamInvitationResource\RelationManagers;
+use Illuminate\Contracts\Support\Htmlable;
 
 class TeamInvitationResource extends Resource
 {
     protected static ?string $model = TeamInvitation::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+
+    public static function getNavigationIcon(): string | Htmlable | null
+    {
+        return config("filament-team-manager.icons.invitation");
+    }
+
     protected static ?string $navigationGroup = 'Team';
 
     public static function form(Form $form): Form

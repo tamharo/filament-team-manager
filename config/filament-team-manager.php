@@ -4,6 +4,11 @@ return [
 
     "name" => env("APP_NAME"),
 
+    "icons" => [
+        "team" => "nav-icon.teams",
+        "invitation" => "nav-icon.team-invitations",
+    ],
+
     //routes name for redirection
     "routes" => [
         "home" => "welcome",
